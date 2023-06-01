@@ -2,8 +2,10 @@
 #include "interface.h"
 #include "System.h"
 #include "Sound.h"
+#include "monster.h"
 #include "boss.h"
 #include "stage.h"
+#include "monster.h"
 #include <stdio.h>
 #include <Windows.h>
 #include <process.h>
@@ -33,7 +35,8 @@ int playerShiftRight(void)
 	SetCurrentCursorPos(player.playerPos.X, player.playerPos.Y);
 	player.direction = RIGHT;
 	ShowPlayer();
-	Sound_Play(WALKING);
+	soundPos = player.playerPos;
+	FindMonster(monsterPos.X, monsterPos.Y);
 	return detectCollision;
 }
 int playerShiftLeft(void)
@@ -47,7 +50,8 @@ int playerShiftLeft(void)
 	SetCurrentCursorPos(player.playerPos.X, player.playerPos.Y);
 	player.direction = LEFT;
 	ShowPlayer();
-	Sound_Play(WALKING);
+	soundPos = player.playerPos;
+	FindMonster(monsterPos.X, monsterPos.Y);
 	return detectCollision;
 }
 int playerShiftUp(void)
@@ -61,7 +65,8 @@ int playerShiftUp(void)
 	SetCurrentCursorPos(player.playerPos.X, player.playerPos.Y);
 	player.direction = UP;
 	ShowPlayer();
-	Sound_Play(WALKING);
+	soundPos = player.playerPos;
+	FindMonster(monsterPos.X, monsterPos.Y);
 	return detectCollision;
 }
 int playerShiftDown(void)
@@ -75,7 +80,8 @@ int playerShiftDown(void)
 	SetCurrentCursorPos(player.playerPos.X, player.playerPos.Y);
 	player.direction = DOWN;
 	ShowPlayer();
-	Sound_Play(WALKING);
+	soundPos = player.playerPos;
+	FindMonster(monsterPos.X, monsterPos.Y);
 	return detectCollision;
 }
 void ShowPlayer()
@@ -178,6 +184,7 @@ void playerMove(int direction) {
 			player.stageKey = 0;
 			stageNum++;
 			StageInforInit(stageNum);
+			MonsterInit();
 			clearStage();
 			getScript(stageNum);
 			printScriptQueue();
