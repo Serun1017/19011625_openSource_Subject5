@@ -134,6 +134,7 @@
     <ClInclude Include="System.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="itemAndWeapon.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="Player.c" />
     <ClCompile Include="stage.c" />
