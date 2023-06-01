@@ -54,3 +54,6 @@
 #define GAMEOVER 11		// 게임오버 효과음
 #define MAIN 12			// 메인화면 배경음
 #define SELECT_MANU 13  // 메인화면 메뉴 효과음
+
+//아이템 사용
+#define MAX_ROCK_SHOWRANGE 5    // 돌멩이 아이템 사용시 보여주는 주변 반경 최대값
