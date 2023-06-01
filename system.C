@@ -48,6 +48,9 @@ void ProcessKeyInput() {
 			case ATTACK:
 				shotGun();
 				break;
+			case ITEM_INPUT_1:
+				useItemRock();
+				break;
 			case ITEM_INPUT_2:
 				useItemPortion();
 				break;
