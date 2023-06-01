@@ -165,7 +165,7 @@ void PrintUI() {
 void StageInforInit(int stageNum) {
 	GetStageInfor(stageNum);
 
-	//playerInfoInit(MAX_LIFE, 0, 0, 0, RIGHT);
+	playerInfoInit(MAX_LIFE, 0, 0, 0, RIGHT);
 	initGunInfo();
 }
 void clearStage() {
@@ -190,6 +190,9 @@ void GameOver() {
 	FILE* fstage = NULL;
 	char tmp;
 	int i, j;
+	if (IsPlaying == true) {
+		StopSound(MONSTER);
+	}
 	Sound_Play(GAMEOVER);
 	fstage = fopen("gameover.txt", "r");
 	if (fstage != NULL) {
@@ -224,7 +227,7 @@ void GameStart() {
 	char tmp;
 	int i, j;
 	int num;
-	Sound_Play(12);
+	Sound_Play(MAIN);
 	do {
 		fstage = fopen("gamestart.txt", "r");
 		if (fstage != NULL) {
@@ -310,7 +313,7 @@ int SelectMenu() {
 					printf("¡ß");
 					SetCurrentCursorPos(curPos.X - 2, curPos.Y - 2);
 					printf("<<");
-					Sound_Play(13);
+					Sound_Play(SELECT_MANU);
 					num--;
 					break;
 				}
@@ -328,7 +331,7 @@ int SelectMenu() {
 					printf("¡ß");
 					SetCurrentCursorPos(curPos.X - 2, curPos.Y + 2);
 					printf("<<");
-					Sound_Play(13);
+					Sound_Play(SELECT_MANU);
 					num++;
 					break;
 				}
@@ -337,7 +340,7 @@ int SelectMenu() {
 				curPos = GetCurrentCursorPos();
 				SetCurrentCursorPos(curPos.X - 2, curPos.Y);
 				printf("  ");
-				Sound_Play(13);
+				Sound_Play(SELECT_MANU);
 				return num;
 			}
 		}
