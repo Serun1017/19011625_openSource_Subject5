@@ -9,16 +9,16 @@ void GetStageInfor(int StageNum) {
 	int i, j;
 	switch (StageNum) {
 	case 1:
-		fstage = fopen("stage/stage1.txt", "r");
+		fstage = fopen("stage1.txt", "r");
 		break;
 	case 2:
-		fstage = fopen("stage/stage2.txt", "r");
+		fstage = fopen("stage2.txt", "r");
 		break;
 	case 3:
-		fstage = fopen("stage/stage3.txt", "r");
+		fstage = fopen("stage3.txt", "r");
 		break;
 	case 4:
-		fstage = fopen("stage/stage4.txt", "r");
+		fstage = fopen("stage4.txt", "r");
 		break;
 	default:
 		break;
