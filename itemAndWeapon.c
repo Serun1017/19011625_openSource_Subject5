@@ -2,7 +2,7 @@
 #include "Player.h"
 #include <Windows.h>
 #include <math.h>
-
+#include "monster.h"
 GUN gun;
 ROCK rock;
 
@@ -88,9 +88,10 @@ int showBullet(void) {
 		// 몬스터를 만남
 		if (STAGE[gun.arriveBulletPos.Y][gun.arriveBulletPos.X / 2] == MONSTER) {
 			STAGE[gun.arriveBulletPos.Y][gun.arriveBulletPos.X / 2] = 0;
+
 			SetCurrentCursorPos(gun.arriveBulletPos.X, gun.arriveBulletPos.Y);
 			printf("※");		// BANG
-			Sleep(100);
+			Sleep(50);
 			SetCurrentCursorPos(gun.arriveBulletPos.X, gun.arriveBulletPos.Y);
 			printf("  ");
 		}
@@ -100,7 +101,7 @@ int showBullet(void) {
 
 	SetCurrentCursorPos(gun.currentBulletPos.X, gun.currentBulletPos.Y);
 	printf("ⅹ");
-	Sleep(150);
+	Sleep(100);
 	SetCurrentCursorPos(gun.currentBulletPos.X, gun.currentBulletPos.Y);
 	showStage(DetectCollision(gun.currentBulletPos.X, gun.currentBulletPos.Y), gun.currentBulletPos.X, gun.currentBulletPos.Y);
 
@@ -161,12 +162,13 @@ int showRock(void) {
 		// 벽에 부딪힘
 		showSoundRange(rock.arriveRockPos, ITEM_1, rock.showRange);
 		rock.throwOrNot = 0;
+		Sound_Play(USE_ITEM1);
 		return 0;
 	}
 
 	SetCurrentCursorPos(rock.currentRockPos.X, rock.currentRockPos.Y);
 	printf("ｏ");
-	Sleep(150);
+	Sleep(70);
 	SetCurrentCursorPos(rock.currentRockPos.X, rock.currentRockPos.Y);
 	//showStage(DetectCollision(rock.currentRockPos.X, rock.currentRockPos.Y), rock.currentRockPos.X, rock.currentRockPos.Y);
 	printf("  ");
