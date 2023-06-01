@@ -27,6 +27,12 @@
     <ClInclude Include="System.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="itemAndWeapon.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="script.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -41,6 +47,9 @@
     <ClCompile Include="stage.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="itemAndWeapon.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="stage1.txt">
@@ -49,5 +58,12 @@
     <Text Include="stage2.txt">
       <Filter>리소스 파일</Filter>
     </Text>
+    <Text Include="endingLose.txt" />
+    <Text Include="endingWin.txt" />
+    <Text Include="prologText.txt" />
+    <Text Include="stage1Text.txt" />
+    <Text Include="stage2Text.txt" />
+    <Text Include="stage3Text.txt" />
+    <Text Include="stage4Text.txt" />
   </ItemGroup>
 </Project>

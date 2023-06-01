@@ -130,6 +130,7 @@
     <ClInclude Include="interface.h" />
     <ClInclude Include="itemAndWeapon.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="script.h" />
     <ClInclude Include="stage.h" />
     <ClInclude Include="System.h" />
   </ItemGroup>
