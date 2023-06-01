@@ -45,6 +45,12 @@
     <ClInclude Include="Sound.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="boss.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="monster.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -66,6 +72,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="sound.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boss.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="monster.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -97,6 +109,8 @@
     <Text Include="stage4Text.txt">
       <Filter>리소스 파일\script</Filter>
     </Text>
+    <Text Include="stage\stage3.txt" />
+    <Text Include="stage\stage4.txt" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="sound\getGun.wav">

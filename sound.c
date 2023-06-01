@@ -7,7 +7,7 @@ void SoundInit(void) {
 	soundPos.X = 0;
 	soundPos.Y = 0;
 
-	FMOD_System_Create(&g_System);
+	FMOD_System_Create(&g_System, 1);
 	FMOD_System_Init(g_System, 15, FMOD_INIT_NORMAL, NULL); //최대 10개의 소리재생가능
 
 	//사운드 생성 -주석 처리된 항목들은 추가할 예정
