@@ -109,8 +109,12 @@
     <Text Include="stage4Text.txt">
       <Filter>리소스 파일\script</Filter>
     </Text>
-    <Text Include="stage\stage3.txt" />
-    <Text Include="stage\stage4.txt" />
+    <Text Include="stage\stage3.txt">
+      <Filter>리소스 파일\stage</Filter>
+    </Text>
+    <Text Include="stage\stage4.txt">
+      <Filter>리소스 파일\stage</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <Media Include="sound\getGun.wav">

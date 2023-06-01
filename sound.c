@@ -7,7 +7,7 @@ void SoundInit(void) {
 	soundPos.X = 0;
 	soundPos.Y = 0;
 
-	FMOD_System_Create(&g_System, 0);
+	FMOD_System_Create(&g_System);
 	FMOD_System_Init(g_System, 15, FMOD_INIT_NORMAL, NULL);
 
 	FMOD_System_CreateSound(g_System, "sound/game.mp3", FMOD_LOOP_NORMAL, 0, &g_Sound[0]);
