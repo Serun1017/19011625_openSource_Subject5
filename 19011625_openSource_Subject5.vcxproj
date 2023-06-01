@@ -158,6 +158,8 @@
     <Text Include="stage2Text.txt" />
     <Text Include="stage3Text.txt" />
     <Text Include="stage4Text.txt" />
+    <Text Include="stage\stage3.txt" />
+    <Text Include="stage\stage4.txt" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="sound\damage.mp3" />
