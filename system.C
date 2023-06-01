@@ -27,21 +27,31 @@ void SetCurrentCursorPos(int x, int y)
 void ProcessKeyInput() {
 	int key;
 
-	if (_kbhit() != 0) {
-		key = _getch();
-		switch (key) {
-		case LEFT:
-			playerMove(LEFT);
-			break;
-		case RIGHT:
-			playerMove(RIGHT);
-			break;
-		case UP:
-			playerMove(UP);
-			break;
-		case DOWN:
-			playerMove(DOWN);
-			break;
+	for (int i = 0; i < 20; i++) {
+		if (_kbhit() != 0) {
+			key = _getch();
+			switch (key) {
+				// ÀÌµ¿
+			case LEFT:
+				playerMove(LEFT);
+				break;
+			case RIGHT:
+				playerMove(RIGHT);
+				break;
+			case UP:
+				playerMove(UP);
+				break;
+			case DOWN:
+				playerMove(DOWN);
+				break;
+				//
+			case ATTACK:
+				shotGun();
+				break;
+			case ITEM_INPUT_2:
+				useItemPortion();
+				break;
+			}
 		}
 	}
 }
