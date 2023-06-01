@@ -153,6 +153,18 @@
     <Text Include="stage3Text.txt" />
     <Text Include="stage4Text.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="sound\damage.mp3" />
+    <Media Include="sound\gameover.mp3" />
+    <Media Include="sound\getGun.wav" />
+    <Media Include="sound\getItem1.wav" />
+    <Media Include="sound\getKey.mp3" />
+    <Media Include="sound\main.mp3" />
+    <Media Include="sound\selectUI.wav" />
+    <Media Include="sound\useGun2.wav" />
+    <Media Include="sound\useKey.mp3" />
+    <Media Include="sound\walking.wav" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
