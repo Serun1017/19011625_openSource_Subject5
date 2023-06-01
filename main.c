@@ -1,4 +1,3 @@
-
 #include "System.h"
 #include "interface.h"
 #include "stage.h"
@@ -9,9 +8,10 @@
 #include <time.h>
 #include "boss.h"
 #include "Sound.h"
+#include "monster.h"
 
 int stageNum = 1;
-
+int d = 0;
 int main(void)
 {
 	system("mode con cols=130 lines=42");
@@ -35,12 +35,13 @@ int main(void)
 	clearStage();
 	ShowPlayer();
 	PrintUI();
-
+	MonsterInit();
 	while (1) {
 		ShowPlayer();
 		if (isPlayerDead() == 1) {
 			GameOver();
 			StageInforInit(stageNum);
+			MonsterInit();
 			bossCooldownThread = CreateThread(NULL, 0, Thread_BOSS_COOLDOWN, (LPVOID)1, 0, &threadId);
 		}
 		if (gun.shotOrNot && !showBullet()) {
@@ -54,6 +55,11 @@ int main(void)
 			bossCooldown();
 			clearLightning();
 		}
+
+		t_pos = SoundPoint();
+		isMonsterInRange(d, t_pos);
+		Sleep(30);
+		d++;
 		PrintUI();
 	}
 	getchar();
