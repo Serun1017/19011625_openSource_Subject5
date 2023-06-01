@@ -138,6 +138,7 @@
     <ClCompile Include="itemAndWeapon.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="Player.c" />
+    <ClCompile Include="script.c" />
     <ClCompile Include="stage.c" />
     <ClCompile Include="system.C" />
   </ItemGroup>

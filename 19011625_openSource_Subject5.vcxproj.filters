@@ -50,6 +50,9 @@
     <ClCompile Include="itemAndWeapon.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="script.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="stage1.txt">
