@@ -145,6 +145,7 @@
     <ClCompile Include="boss.c" />
     <ClCompile Include="itemAndWeapon.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="monster.c" />
     <ClCompile Include="Player.c" />
     <ClCompile Include="script.c" />
     <ClCompile Include="sound.c" />
