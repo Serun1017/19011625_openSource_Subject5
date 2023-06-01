@@ -38,6 +38,9 @@
     <ClCompile Include="Player.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="stage.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="stage1.txt">
