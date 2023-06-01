@@ -36,7 +36,6 @@ int playerShiftRight(void)
 	player.direction = RIGHT;
 	ShowPlayer();
 	soundPos = player.playerPos;
-	FindMonster(monsterPos.X, monsterPos.Y);
 	return detectCollision;
 }
 int playerShiftLeft(void)
@@ -51,7 +50,6 @@ int playerShiftLeft(void)
 	player.direction = LEFT;
 	ShowPlayer();
 	soundPos = player.playerPos;
-	FindMonster(monsterPos.X, monsterPos.Y);
 	return detectCollision;
 }
 int playerShiftUp(void)
@@ -66,7 +64,6 @@ int playerShiftUp(void)
 	player.direction = UP;
 	ShowPlayer();
 	soundPos = player.playerPos;
-	FindMonster(monsterPos.X, monsterPos.Y);
 	return detectCollision;
 }
 int playerShiftDown(void)
@@ -81,7 +78,6 @@ int playerShiftDown(void)
 	player.direction = DOWN;
 	ShowPlayer();
 	soundPos = player.playerPos;
-	FindMonster(monsterPos.X, monsterPos.Y);
 	return detectCollision;
 }
 void ShowPlayer()
@@ -136,6 +132,7 @@ void playerMove(int direction) {
 		PrintUI();
 		break;
 	case ITEM_2:
+		Sound_Play(GET_ITEM2);
 		player.item_portion++;
 		STAGE[player.playerPos.Y][player.playerPos.X / 2] = 0;
 		PrintUI();
@@ -171,16 +168,30 @@ void playerMove(int direction) {
 				STAGE[15][25] = 0;
 			}
 			else if (player.stageKey == 3) {
-				boss.bossHP = 1;
+				boss.bossHP = 0;
 				STAGE[5][22] = 0;
 				STAGE[6][22] = 0;
 				STAGE[7][22] = 0;
+
+				clearStage();
+				stageNum = 6;
+				getScript(stageNum);
+				printScriptQueue();
+				getchar();
+				clearStage();
+
+				isCleared = 1;
+				printStage();
 			}
 		}
 		break;
 	case EXIT:
 		if (isPlayerHasKey() >= 1) {
+			if (isCleared == 1 && stageNum == 6) {
+				stageNum = 0;
+			}
 			Sound_Play(USE_KEY);
+			StopSound(MONSTER);
 			player.stageKey = 0;
 			stageNum++;
 			StageInforInit(stageNum);
@@ -190,6 +201,9 @@ void playerMove(int direction) {
 			printScriptQueue();
 			clearStage();
 			ShowPlayer();
+			if (isCleared == 1) {
+				printStage();
+			}
 
 			PrintUI();
 			if (stageNum == 4) {

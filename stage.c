@@ -82,33 +82,59 @@ void showStage(int stageObject, int posX, int posY) {
 		printf("  ");
 		break;
 	case WALL:
+		if (isCleared == 1) {
+			SetConsoleTextAttribute((GetStdHandle(STD_OUTPUT_HANDLE)), 7);
+		}
 		printf("■");
 		break;
 	case ITEM_1:
+		if (isCleared == 1) {
+			SetConsoleTextAttribute((GetStdHandle(STD_OUTPUT_HANDLE)), 8);
+		}
 		printf("○");
 		break;
 	case ITEM_2:
+		if (isCleared == 1) {
+			SetConsoleTextAttribute((GetStdHandle(STD_OUTPUT_HANDLE)), 13);
+		}
 		printf("♥");
 		break;
 	case WEAPON:
+		if (isCleared == 1) {
+			SetConsoleTextAttribute((GetStdHandle(STD_OUTPUT_HANDLE)), 12);
+		}
 		printf("ⅹ");
 		break;
 	case MONSTER:
+		if (isCleared == 1) {
+			SetConsoleTextAttribute((GetStdHandle(STD_OUTPUT_HANDLE)), 4);
+		}
 		printf("§");
 		break;
 	case NPC:
+		if (isCleared == 1) {
+			SetConsoleTextAttribute((GetStdHandle(STD_OUTPUT_HANDLE)), 6);
+		}
 		printf("ⓝ");		// 삭제 예정
 		break;
 	case PC:
-		//printf("◆");	
 		break;
 	case KEY:
+		if (isCleared == 1) {
+			SetConsoleTextAttribute((GetStdHandle(STD_OUTPUT_HANDLE)), 10);
+		}
 		printf("＊");
 		break;
 	case EXIT:
+		if (isCleared == 1) {
+			SetConsoleTextAttribute((GetStdHandle(STD_OUTPUT_HANDLE)), 10);
+		}
 		printf("★");
 		break;
 	case LIGHTNING:
+		if (isCleared == 1) {
+			SetConsoleTextAttribute((GetStdHandle(STD_OUTPUT_HANDLE)), 1);
+		}
 		printf("※");
 		break;
 	default:
@@ -165,8 +191,8 @@ void PrintUI() {
 void StageInforInit(int stageNum) {
 	GetStageInfor(stageNum);
 
-	playerInfoInit(MAX_LIFE, 0, 0, 0, RIGHT);
-	initGunInfo();
+	//playerInfoInit(MAX_LIFE, 0, 0, 0, RIGHT);
+	//initGunInfo();
 }
 void clearStage() {
 	int i, j;
@@ -193,7 +219,9 @@ void GameOver() {
 	if (IsPlaying == true) {
 		StopSound(MONSTER);
 	}
+	StopSound(GAME);
 	Sound_Play(GAMEOVER);
+	playerInfoInit(MAX_LIFE, 0, 0, 0, RIGHT);
 	fstage = fopen("gameover.txt", "r");
 	if (fstage != NULL) {
 		for (i = 0; i < STAGE_Y; i++) {
@@ -220,6 +248,7 @@ void GameOver() {
 		printf("                          ");
 		SetCurrentCursorPos(36, 33);
 	}
+	Sound_Play(GAME);
 	clearStage();
 }
 void GameStart() {
@@ -227,7 +256,7 @@ void GameStart() {
 	char tmp;
 	int i, j;
 	int num;
-	Sound_Play(MAIN);
+	Sound_Play(GAME);
 	do {
 		fstage = fopen("gamestart.txt", "r");
 		if (fstage != NULL) {
@@ -268,7 +297,7 @@ void GameStart() {
 		while (1) {
 			num = SelectMenu();
 			if (num == 0) {
-				StopSound(MAIN);
+				//StopSound(MAIN);
 				break;
 			}
 			else if (num == 1) {

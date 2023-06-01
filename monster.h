@@ -33,8 +33,6 @@ enum {
 	DIRECTION_RIGHTDOWN, DIRECTION_DOWN, DIRECTION_LEFTDOWN
 };
 
-COORD monsterPos;
-
 void init_astar();
 int is_available_grid(int x, int y);
 node_t* is_open(int x, int y);

@@ -36,14 +36,14 @@
 #define SCRIPT_POS_X STAGE_POS_X + (STAGE_X - SCRIPT_X) / 2
 #define SCRIPT_POS_Y STAGE_POS_Y + (STAGE_Y - SCRIPT_Y) / 2
 
-#define MAX_LIFE 3			// 라이프 최대 보유 가능 수
+#define MAX_LIFE 5			// 라이프 최대 보유 가능 수
 #define INIT_WEAPON 0	// 처음 시작할 때 보유할 탄피 수
 #define MAX_ROCK_SHOWRANGE 5
 
 #define LIGHTNING 10
 
 //출력 가능 소리 목록
-#define WALKING 0		// 걷는 소리
+#define GAME 0			// 게임 배경 음악
 #define GET_ITEM1 1		// 돌멩이 획득
 #define GET_ITEM2 2		// 포션 획득
 #define GET_GUN 3		// 탄피 획득
@@ -53,8 +53,9 @@
 #define	USE_ITEM2 7		// 포션 사용
 #define USE_GUN1 8		// 탄피 사용(탄피 미보유 시)
 #define USE_GUN2 9		// 탄피 사용(탄피 보유 시)
-#define USE_KEY 10
-#define DAMAGE 11		// 플레이어가 데이지 입음
+#define USE_KEY 10		// 열쇠 사용
+#define DAMAGE 11		// 플레이어가 데미지를 받음
 #define GAMEOVER 12		// 게임오버 효과음
-#define MAIN 13			// 메인화면 배경음
-#define SELECT_MANU 14  // 메인화면 메뉴 효과음
+#define SELECT_MANU 13  // 메인화면 메뉴 효과음
+
+extern int isCleared;
