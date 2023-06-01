@@ -139,8 +139,15 @@
     <ClCompile Include="system.C" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="endingLose.txt" />
+    <Text Include="endingWin.txt" />
+    <Text Include="prologText.txt" />
     <Text Include="stage1.txt" />
+    <Text Include="stage1Text.txt" />
     <Text Include="stage2.txt" />
+    <Text Include="stage2Text.txt" />
+    <Text Include="stage3Text.txt" />
+    <Text Include="stage4Text.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
