@@ -134,6 +134,7 @@
     <ClInclude Include="boss.h" />
     <ClInclude Include="interface.h" />
     <ClInclude Include="itemAndWeapon.h" />
+    <ClInclude Include="monster.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="script.h" />
     <ClInclude Include="Sound.h" />
