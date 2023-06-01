@@ -144,6 +144,7 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="Player.c" />
     <ClCompile Include="script.c" />
+    <ClCompile Include="sound.c" />
     <ClCompile Include="stage.c" />
     <ClCompile Include="system.C" />
   </ItemGroup>

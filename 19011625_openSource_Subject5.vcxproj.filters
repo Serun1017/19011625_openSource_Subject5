@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="리소스 파일\sound">
+      <UniqueIdentifier>{07341738-955c-48ca-be50-b8c3105ac25e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\stage">
+      <UniqueIdentifier>{4da9e88c-40ae-4143-b0bb-76ec08064fc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\script">
+      <UniqueIdentifier>{5e196276-3774-4bd9-8c91-dea6991b222a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="interface.h">
@@ -31,6 +40,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="script.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,20 +65,69 @@
     <ClCompile Include="script.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="sound.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="stage1.txt">
-      <Filter>리소스 파일</Filter>
+      <Filter>리소스 파일\stage</Filter>
     </Text>
     <Text Include="stage2.txt">
-      <Filter>리소스 파일</Filter>
+      <Filter>리소스 파일\stage</Filter>
     </Text>
-    <Text Include="endingLose.txt" />
-    <Text Include="endingWin.txt" />
-    <Text Include="prologText.txt" />
-    <Text Include="stage1Text.txt" />
-    <Text Include="stage2Text.txt" />
-    <Text Include="stage3Text.txt" />
-    <Text Include="stage4Text.txt" />
+    <Text Include="endingLose.txt">
+      <Filter>리소스 파일\script</Filter>
+    </Text>
+    <Text Include="endingWin.txt">
+      <Filter>리소스 파일\script</Filter>
+    </Text>
+    <Text Include="prologText.txt">
+      <Filter>리소스 파일\script</Filter>
+    </Text>
+    <Text Include="stage1Text.txt">
+      <Filter>리소스 파일\script</Filter>
+    </Text>
+    <Text Include="stage2Text.txt">
+      <Filter>리소스 파일\script</Filter>
+    </Text>
+    <Text Include="stage3Text.txt">
+      <Filter>리소스 파일\script</Filter>
+    </Text>
+    <Text Include="stage4Text.txt">
+      <Filter>리소스 파일\script</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="sound\getGun.wav">
+      <Filter>리소스 파일\sound</Filter>
+    </Media>
+    <Media Include="sound\getItem1.wav">
+      <Filter>리소스 파일\sound</Filter>
+    </Media>
+    <Media Include="sound\selectUI.wav">
+      <Filter>리소스 파일\sound</Filter>
+    </Media>
+    <Media Include="sound\useGun2.wav">
+      <Filter>리소스 파일\sound</Filter>
+    </Media>
+    <Media Include="sound\walking.wav">
+      <Filter>리소스 파일\sound</Filter>
+    </Media>
+    <Media Include="sound\damage.mp3">
+      <Filter>리소스 파일\sound</Filter>
+    </Media>
+    <Media Include="sound\gameover.mp3">
+      <Filter>리소스 파일\sound</Filter>
+    </Media>
+    <Media Include="sound\getKey.mp3">
+      <Filter>리소스 파일\sound</Filter>
+    </Media>
+    <Media Include="sound\main.mp3">
+      <Filter>리소스 파일\sound</Filter>
+    </Media>
+    <Media Include="sound\useKey.mp3">
+      <Filter>리소스 파일\sound</Filter>
+    </Media>
   </ItemGroup>
 </Project>
