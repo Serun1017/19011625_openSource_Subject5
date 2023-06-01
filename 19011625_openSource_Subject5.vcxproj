@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="boss.h" />
     <ClInclude Include="interface.h" />
     <ClInclude Include="itemAndWeapon.h" />
     <ClInclude Include="Player.h" />
