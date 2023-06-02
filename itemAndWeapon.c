@@ -2,7 +2,7 @@
 #include "Player.h"
 #include <Windows.h>
 #include <math.h>
-
+#include "monster.h"
 GUN gun;
 ROCK rock;
 
@@ -43,7 +43,10 @@ COORD moveByDirection(int currentDirect) {
 }
 
 void shotGun(void) {
-	if (player.weapon == 0) return 0;		// ÅºÇÇ°¡ ¾øÀ½
+	if (player.weapon == 0) {
+		Sound_Play(USE_GUN1);
+		return 0;		// ÅºÇÇ°¡ ¾øÀ½
+	}
 	player.weapon--;							// ÅºÇÇ »ç¿ë
 	Sound_Play(USE_GUN2);
 
@@ -88,9 +91,11 @@ int showBullet(void) {
 		// ¸ó½ºÅÍ¸¦ ¸¸³²
 		if (STAGE[gun.arriveBulletPos.Y][gun.arriveBulletPos.X / 2] == MONSTER) {
 			STAGE[gun.arriveBulletPos.Y][gun.arriveBulletPos.X / 2] = 0;
+
 			SetCurrentCursorPos(gun.arriveBulletPos.X, gun.arriveBulletPos.Y);
 			printf("¡Ø");		// BANG
-			Sleep(100);
+			StopSound(MONSTER);
+			Sleep(50);
 			SetCurrentCursorPos(gun.arriveBulletPos.X, gun.arriveBulletPos.Y);
 			printf("  ");
 		}
@@ -100,7 +105,7 @@ int showBullet(void) {
 
 	SetCurrentCursorPos(gun.currentBulletPos.X, gun.currentBulletPos.Y);
 	printf("¥ª");
-	Sleep(150);
+	Sleep(100);
 	SetCurrentCursorPos(gun.currentBulletPos.X, gun.currentBulletPos.Y);
 	showStage(DetectCollision(gun.currentBulletPos.X, gun.currentBulletPos.Y), gun.currentBulletPos.X, gun.currentBulletPos.Y);
 
@@ -161,12 +166,13 @@ int showRock(void) {
 		// º®¿¡ ºÎµúÈû
 		showSoundRange(rock.arriveRockPos, ITEM_1, rock.showRange);
 		rock.throwOrNot = 0;
+		Sound_Play(USE_ITEM1);
 		return 0;
 	}
 
 	SetCurrentCursorPos(rock.currentRockPos.X, rock.currentRockPos.Y);
 	printf("£ï");
-	Sleep(150);
+	Sleep(70);
 	SetCurrentCursorPos(rock.currentRockPos.X, rock.currentRockPos.Y);
 	//showStage(DetectCollision(rock.currentRockPos.X, rock.currentRockPos.Y), rock.currentRockPos.X, rock.currentRockPos.Y);
 	printf("  ");
@@ -180,12 +186,15 @@ int showRock(void) {
 void useItemPortion(void) {
 	if (player.item_portion == 0) return;
 	player.item_portion--;
-
+	Sound_Play(USE_ITEM2);
 	srand(time(NULL));
 	int life = (unsigned int)rand() % 10;
-	if (life < 5) player.life++;		// life +1 50%
-	if (life < 8) player.life--;		// life -1 30%
-	else player.life += 2;			// life +2 20%
+	if (life < 6) player.life++;			// life +1 60%
+	else if (life < 7) {
+		player.life--;	// life -1 10%
+		Sound_Play(DAMAGE);
+	}
+	else player.life += 2;				// life +2 30%
 
 	if (player.life > MAX_LIFE) player.life = MAX_LIFE;
 

@@ -347,9 +347,6 @@ void monsterMove(int i, int tx, int ty, int d) {
 	b = b->next_node;
 	nx = b->x;
 	ny = b->y;
-	monsterPos.X = nx;
-	monsterPos.Y = ny;
-	FindMonster(nx, ny);
 	if ((nx >= m[i].mobx - 1 && nx <= m[i].mobx + 1) && (ny >= m[i].moby - 1 && ny <= m[i].moby + 1)) {
 		deleteMob(m[i].mobx, m[i].moby);
 		showMob(nx, ny);
